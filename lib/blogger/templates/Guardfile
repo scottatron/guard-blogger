@@ -1,0 +1,3 @@
+guard :blogger, email: '', password: '', blog: '' do
+  watch 'template.xml'
+end
