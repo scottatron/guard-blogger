@@ -1,29 +1,23 @@
 # Guard::Blogger
 
-TODO: Write a gem description
+Guard plugin to update a Blogger template.
+
+## Requirements
+
+You will need Firefox installed as this plugin currently uses selenium-webdriver
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add to your Gemfile:
 
     gem 'guard-blogger'
 
-And then execute:
+Init the Guardfile definition:
 
-    $ bundle
+    guard init blogger
 
-Or install it yourself as:
+Set your Blogger login credentials and the name of your blog in the Guardfile:
 
-    $ gem install guard-blogger
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Contributing
-
-1. Fork it ( http://github.com/<my-github-username>/guard-blogger/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+    guard :blogger, email: 'blogger@mydomain.com', password: 'sshhhhhhitsasecret', blog: 'My Blog' do
+      watch 'template.xml'
+    end
